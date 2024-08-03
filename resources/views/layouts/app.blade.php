@@ -34,14 +34,7 @@
                     <li class="nav-link"><a href="/project" class="text-decoration:none">Project</a></li>
                     <li class="nav-link"><a href="/budget" class="text-decoration:none">Budget</a></li>
                     <li class="nav-link"><a href="/cost" class="text-decoration:none">Cost</a></li>
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Master
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a href="/user" class="dropdown-item">User</a>
-                        </div>
-                    </li>
+    
                     </ul>
                     
 
@@ -67,11 +60,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/users">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
