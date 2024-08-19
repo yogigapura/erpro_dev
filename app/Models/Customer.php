@@ -26,6 +26,7 @@ class Customer extends Model
             'cust_email'
         ];
 
+    // Define the relationship: A customer has many projects
     public function project(): HasMany
     {
         return $this->hasMany(Project::class);
