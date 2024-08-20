@@ -36,8 +36,9 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
+            <strong>Select a customer : </strong>
         <select class="form-select" name="id_cust" id="id_cust" required>
-            <option value="" disabled selected>Select a customer</option>
+            <option value="" disabled selected>...</option>
                 @foreach ($customers as $customer)
                     <option value="{{ $customer->id_cust }}">{{ $customer->cust_name }}</option>
                 @endforeach
@@ -67,7 +68,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Project Detail :</strong>
-                <textarea class="form-control" style="height:150px" name="proj_detail" placeholder="Detail about the project"></textarea>
+                <input class="form-control" style="height:150px" name="proj_detail" placeholder="Detail about the project"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
