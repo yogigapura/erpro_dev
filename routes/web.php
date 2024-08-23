@@ -18,3 +18,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('customers',CustomerController::class);
 Route::resource('projects',ProjectController::class);
 Route::resource('users',UserController::class);
+
+
+// Route::get('/projects/{id}/details', [ProjectController::class, 'details']);

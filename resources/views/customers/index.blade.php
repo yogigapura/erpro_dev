@@ -54,7 +54,6 @@
                     <a class="btn btn-info" href="{{ route('customers.show',$customer->id_cust) }}">Detail</a>
     
                     <a class="btn btn-primary" href="{{ route('customers.edit',$customer->id_cust) }}">Edit</a>
-   
                     @csrf
                     @method('DELETE')
       

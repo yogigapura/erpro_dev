@@ -52,6 +52,9 @@ class ProjectController extends Controller
     public function show(string $id)
     {
         //
+        $project = Project::with('customer')->findOrFail($id);
+
+        return view('projects.detail', compact('project'));
     }
 
     /**
@@ -66,6 +69,7 @@ class ProjectController extends Controller
     public function edit($id)
     {
         //
+        // $projects = Project::with('customer')->findOrFail($id);
         $project = Project::findOrFail($id);
         $customers = Customer::all();
         return view('projects.edit',compact('project','customers'));
@@ -91,4 +95,5 @@ class ProjectController extends Controller
     {
         //
     }
+
 }
