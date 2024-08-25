@@ -3,12 +3,16 @@
 @section('content')
 
 <div class="container">
-    <a href="{{ route('projects.index') }}" class="btn btn-info mb-3">Back</a>
+    <a href="{{ route('projects.index') }}" class="btn btn-secondary mb-3">Back</a>
 </div>
 
 <?php
     $total_budget = 0;
     $total_cost = 0;
+    // session([
+    //     'proj_id' => $project->id_proj,
+    //     'budget_id' => $budget->id_budget
+    // ]);
 ?>
 
 <div class="container">
@@ -63,7 +67,8 @@
 
 <div class="container">
     <h2>Informasi Budget</h2>
-    <table class="table table-bordered">
+    <a class="btn btn-info" href="{{ route('budgets.create') }}">Add</a>
+    <table class="table table-bordered mt-3">
         <tr>
             <th>Budget ID</th>
             <th>Budget Name</th>
@@ -76,10 +81,9 @@
             <td>{{ $budget->id_budget }}</td>
             <td>{{ $budget->budget_name }}</td>
             <td>IDR {{ number_format($budget->budget_value,0) }}</td>
-            <td>{{ $budget->budget_decription }}</td>
+            <td>{{ $budget->budget_description }}</td>
             <td>
-                <a class="btn btn-info" href="{{ route('projects.show',$project->id_proj) }}">Detail</a>
-                <a class="btn btn-primary" href="{{ route('projects.edit',$project->id_proj) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('budgets.edit',$project->id_proj) }}">Edit</a>
             </td>
         </tr>
         
@@ -89,7 +93,8 @@
 
 <div class="container">
     <h2>Informasi Cost</h2>
-    <table class="table table-bordered">
+    <a class="btn btn-info" href="{{ route('projects.show',$project->id_proj) }}">Add</a>
+    <table class="table table-bordered mt-3">
         <tr>
             <th>Cost ID</th>
             <th>Cost Name</th>
@@ -102,9 +107,8 @@
             <td>{{ $cost->id_cost }}</td>
             <td>{{ $cost->cost_name }}</td>
             <td>IDR {{ number_format($cost->cost_value,0) }}</td>
-            <td>{{ $cost->cost_decription }}</td>
+            <td>{{ $cost->cost_description }}</td>
             <td>
-                <a class="btn btn-info" href="{{ route('projects.show',$project->id_proj) }}">Detail</a>
                 <a class="btn btn-primary" href="{{ route('projects.edit',$project->id_proj) }}">Edit</a>
             </td>
         </tr>

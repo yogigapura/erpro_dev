@@ -58,6 +58,8 @@ class ProjectController extends Controller
         $budgets = Budget::where('id_proj',$id)->get();
         $costs = Cost::where('id_proj',$id)->get();
 
+        session(['proj_id' => $project->id_proj]);
+
         return view('projects.detail', compact('project','budgets','costs'));
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BudgetController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UserController;
@@ -18,6 +19,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('customers',CustomerController::class);
 Route::resource('projects',ProjectController::class);
 Route::resource('users',UserController::class);
+Route::resource('budgets',BudgetController::class);
 
 
 // Route::get('/projects/{id}/details', [ProjectController::class, 'details']);
