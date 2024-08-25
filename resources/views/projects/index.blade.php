@@ -28,7 +28,7 @@
                 <h2>Projects</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('projects.create') }}">Create New Project</a>
+                <a class="btn btn-success mb-3" href="{{ route('projects.create') }}">Create New Project</a>
             </div>
         </div>
     </div>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Budget;
 use App\Models\Customer;
 use App\Models\Project;
+use App\Models\Cost;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -53,8 +55,10 @@ class ProjectController extends Controller
     {
         //
         $project = Project::with('customer')->findOrFail($id);
+        $budgets = Budget::where('id_proj',$id)->get();
+        $costs = Cost::where('id_proj',$id)->get();
 
-        return view('projects.detail', compact('project'));
+        return view('projects.detail', compact('project','budgets','costs'));
     }
 
     /**

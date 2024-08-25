@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('costs', function (Blueprint $table) {
-            $table->id('id_cost');
-            $table->string('id_proj');
-            $table->string('id_budget');
-            $table->string('cost_name');
-            $table->bigInteger('cost_value');
-            $table->string('cost_description');
-            $table->timestamps();
+        Schema::table('costs', function (Blueprint $table) {
+            //
             $table->softDeletes();
         });
     }
@@ -28,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('costs');
+        Schema::table('costs', function (Blueprint $table) {
+            //
+        });
     }
 };

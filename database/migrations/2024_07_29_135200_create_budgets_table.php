@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('budgets', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_budget');
+            $table->string('id_proj');
+            $table->string('budget_name');
+            $table->bigInteger('budget_value');
+            $table->string('budget_description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

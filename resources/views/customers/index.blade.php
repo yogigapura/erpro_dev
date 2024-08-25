@@ -28,7 +28,7 @@
                 <h2>Customers</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('customers.create') }}"> Create New Customers</a>
+                <a class="btn btn-success mb-3" href="{{ route('customers.create') }}"> Create New Customers</a>
             </div>
         </div>
     </div>
