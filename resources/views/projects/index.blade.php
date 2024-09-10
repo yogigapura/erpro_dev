@@ -41,8 +41,8 @@
             <th>Project Name</th>
             <th>Contract Number</th>
             <th>Project Value</th>
-            <th>Project Budget</th>
-            <th>Project Cost</th>
+            {{-- <th>Project Budget</th>
+            <th>Project Cost</th> --}}
             <th>Project Due Date</th>
             <th>Project Status</th>
             <th width="280px">Action</th>
@@ -52,12 +52,13 @@
             <td>{{ $project->id_proj }}</td>
             {{-- <td>TBA</td> --}}
             <td>{{ $project->customer->cust_name }}</td>
+            {{-- <td>{{ $budget->cust_name }}</td> --}}
             <td>{{ $project->proj_name }}</td>
             <td>{{ $project->proj_contract }}</td>
             <td>IDR {{ number_format($project->proj_value, 0) }}</td>
-            <td>IDR </td>
-            <td>IDR </td>
-            <td>IDR </td>
+            {{-- <td>IDR {{ number_format($project->total_budget,0) }}</td>
+            <td>IDR {{ number_format($project->total_cost,0) }}</td> --}}
+            <td>{{ $project->proj_due_date }}</td>
             <td>STATUS </td>
             <td>
                 <a class="btn btn-info" href="{{ route('projects.show',$project->id_proj) }}">Detail</a>

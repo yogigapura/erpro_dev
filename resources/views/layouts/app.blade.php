@@ -32,8 +32,8 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-link"><a href="/customers" class="text-decoration:none">Customer</a></li>
                     <li class="nav-link"><a href="/projects" class="text-decoration:none">Project</a></li>
-                    <li class="nav-link"><a href="/budget" class="text-decoration:none">Budget</a></li>
-                    <li class="nav-link"><a href="/cost" class="text-decoration:none">Cost</a></li>
+                    {{-- <li class="nav-link"><a href="/budget" class="text-decoration:none">Budget</a></li>
+                    <li class="nav-link"><a href="/cost" class="text-decoration:none">Cost</a></li> --}}
     
                     </ul>
                     

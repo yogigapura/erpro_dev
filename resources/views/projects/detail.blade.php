@@ -67,7 +67,7 @@
 
 <div class="container">
     <h2>Informasi Budget</h2>
-    <a class="btn btn-info" href="{{ route('budgets.create') }}">Add</a>
+    <a class="btn btn-info" href="{{ route('budgets.create',$project->id_proj) }}">Add</a>
     <table class="table table-bordered mt-3">
         <tr>
             <th>Budget ID</th>
@@ -93,7 +93,7 @@
 
 <div class="container">
     <h2>Informasi Cost</h2>
-    <a class="btn btn-info" href="{{ route('projects.show',$project->id_proj) }}">Add</a>
+    <a class="btn btn-info" href="{{ route('costs.create') }}">Add</a>
     <table class="table table-bordered mt-3">
         <tr>
             <th>Cost ID</th>

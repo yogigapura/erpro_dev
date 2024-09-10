@@ -39,7 +39,7 @@ class BudgetController extends Controller
 
         return redirect()
             ->route('projects.show', $id)
-            ->with('success','Project Created Successfully');
+            ->with('success','Budget Created Successfully');
     }
 
     /**
