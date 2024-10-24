@@ -6,6 +6,7 @@ use App\Http\Controllers\CostController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\GroupController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +23,7 @@ Route::resource('projects',ProjectController::class);
 Route::resource('users',UserController::class);
 Route::resource('budgets',BudgetController::class);
 Route::resource('costs',CostController::class);
+Route::resource('groups',GroupController::class);
 
 
 // Route::get('/projects/{id}/details', [ProjectController::class, 'details']);

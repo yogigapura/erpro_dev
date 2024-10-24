@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -13,8 +14,10 @@ class UserController extends Controller
     public function index()
     {
         //
-        $users = User::latest()->paginate(10);
-        return view('users.index',compact('users'));
+        //$users = User::latest()->paginate(10);
+        $userId = Auth::user()->id;
+        $user = User::find($userId);
+        return view('users.index',compact('user'));
     }
 
     /**

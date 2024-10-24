@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('cust_pic');
             $table->string('cust_no_contact');
             $table->string('cust_email');
+            $table->string('id_group');
             $table->timestamps();
             $table->softDeletes();
         });

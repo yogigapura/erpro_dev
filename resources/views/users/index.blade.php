@@ -30,7 +30,7 @@
            
             <th width="280px">Action</th>
         </tr>
-        @foreach ($users as $user)
+        {{-- @foreach ($users as $user) --}}
         <tr>
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
@@ -47,7 +47,7 @@
                 </form>
             </td>
         </tr>
-        @endforeach
+        {{-- @endforeach --}}
     </table>
 </div>
 @endsection

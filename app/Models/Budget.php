@@ -21,6 +21,7 @@ class Budget extends Model
             'budget_value',
             'budget_description'
         ];
+        
         public function project(): BelongsTo
         {
             return $this->belongsTo(Project::class,'id_proj');

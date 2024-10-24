@@ -46,6 +46,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Update User</button>
+        <a href="/users" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 @endsection
