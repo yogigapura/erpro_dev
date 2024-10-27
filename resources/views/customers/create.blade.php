@@ -46,16 +46,16 @@
                 <input type="text" name="cust_pic" class="form-control" placeholder="PIC">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>User ID :</strong>
-                <input type="text" readonly  name="user_id" class="form-control" value="1">
+                <input type="text" readonly  name="id_user" class="form-control" value="1">
             </div>
-        </div>
+        </div> --}}
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Group ID :</strong>
-                <input type="text" readonly  name="group_id" class="form-control" value="1">
+                <input type="text" readonly  name="id_group" class="form-control" value="1">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

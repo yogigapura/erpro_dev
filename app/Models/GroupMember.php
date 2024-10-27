@@ -13,6 +13,8 @@ class GroupMember extends Model
 
     protected $fillable =           
         [   
+            'id_group',
+            'id_user',
             'group_name',
             'group_description'
         ];

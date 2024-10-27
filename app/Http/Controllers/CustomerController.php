@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -39,8 +40,18 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         //
+        $user = Auth::user()->id;
         Customer::create(
-            $request->all()
+            // $request->all()
+            [
+                'id_user' => $user,
+                'id_group' => $request->id_group,
+                'cust_name' => $request->cust_name,
+                'cust_address' => $request->cust_address,
+                'cust_pic' => $request->cust_pic,
+                'cust_no_contact' => $request->cust_no_contact,
+                'cust_email' => $request->cust_email
+            ]
         );
 
         return redirect()

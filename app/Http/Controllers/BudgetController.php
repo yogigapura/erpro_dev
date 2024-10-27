@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budget;
+use App\Models\Project;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class BudgetController extends Controller
@@ -13,6 +15,7 @@ class BudgetController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -20,7 +23,9 @@ class BudgetController extends Controller
      */
     public function create()
     {
-        //
+        // cara make session
+        //$id_proj = session('id_proj');
+
         $budgets = Budget::all();
         return view('budgets.create',compact('budgets'));
     }
@@ -31,14 +36,23 @@ class BudgetController extends Controller
     public function store(Request $request)
     {
         //
+        $id_proj = session('id_proj');
+        $id_group = session('id_group');
+
         Budget::create(
-            $request->all()
+            //$request->all()
+
+            [
+                'id_proj' => $id_proj,
+                'id_group' => $id_group,
+                'budget_name' => $request->budget_name,
+                'budget_value' => $request->budget_value,
+                'budget_description' => $request->budget_description
+                ]
         );
-        
-        $id = session('proj_id');
 
         return redirect()
-            ->route('projects.show', $id)
+            ->route('projects.show', $id_proj)
             ->with('success','Budget Created Successfully');
     }
 

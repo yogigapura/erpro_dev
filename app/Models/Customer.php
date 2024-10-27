@@ -23,7 +23,8 @@ class Customer extends Model
             'cust_address',
             'cust_pic',
             'cust_no_contact',
-            'cust_email'
+            'cust_email',
+            'id_group'
         ];
 
     // Define the relationship: A customer has many projects

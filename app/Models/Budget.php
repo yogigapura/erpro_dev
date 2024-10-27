@@ -16,7 +16,7 @@ class Budget extends Model
     protected $fillable =           
         [   
             'id_proj',
-            'id_budget',
+            'id_group',
             'budget_name',
             'budget_value',
             'budget_description'

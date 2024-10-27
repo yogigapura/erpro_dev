@@ -36,7 +36,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Project ID :</strong>
-                <input type="text" name="id_proj" class="form-control" placeholder="Project ID" value="{{ $id_proj }}" readonly >
+                <input type="text" name="id_proj" class="form-control" placeholder="Project ID" value="{{ session('proj_name') }}" readonly >
             </div>
         </div>
 

@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Models\Cost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -78,8 +79,15 @@ class ProjectController extends Controller
     public function create()
     {
         //
+        $user = Auth::user()->id;
+
+        $groups = DB::table('group_members')
+            ->join('groups', 'group_members.id_group', '=', 'groups.id_group')
+            ->where('id_user','=',$user)
+            ->get();
+
         $customers = Customer::all();
-        return view('projects.create',compact('customers'));
+        return view('projects.create',compact('customers','groups'));
     }
 
     /**
@@ -88,8 +96,18 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         //
+        $user = Auth::user()->id;
         Project::create(
-            $request->all()
+            //$request->all()
+[
+                'id_cust' => $user,
+                'id_group' => $request->id_group,
+                'proj_name' => $request->proj_name,
+                'proj_contract' => $request->proj_contract,
+                'proj_value' => $request->proj_value,
+                'proj_due_date' => $request->proj_due_date,
+                'proj_detail' => $request->proj_detail
+                ]
         );
 
         return redirect()
@@ -107,7 +125,10 @@ class ProjectController extends Controller
         $budgets = Budget::where('id_proj',$id)->get();
         $costs = Cost::where('id_proj',$id)->get();
 
-        session(['proj_id' => $project->id_proj]);
+        // cara nyimpen session
+        session(['id_proj' => $project->id_proj]);
+        session(['proj_name' => $project->proj_name]);
+        session(['id_group' => $project->id_group]);
 
         return view('projects.detail', compact('project','budgets','costs'));
     }
@@ -125,9 +146,17 @@ class ProjectController extends Controller
     {
         //
         // $projects = Project::with('customer')->findOrFail($id);
+
+        $user = Auth::user()->id;
+
+        $groups = DB::table('group_members')
+            ->join('groups', 'group_members.id_group', '=', 'groups.id_group')
+            ->where('id_user','=',$user)
+            ->get();
+
         $project = Project::findOrFail($id);
         $customers = Customer::all();
-        return view('projects.edit',compact('project','customers'));
+        return view('projects.edit',compact('project','customers','groups'));
     }
 
     /**

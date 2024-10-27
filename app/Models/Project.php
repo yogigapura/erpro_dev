@@ -19,6 +19,7 @@ class Project extends Model
         [   
             'id_proj',
             'id_cust',
+            'id_group',
             'proj_name',
             'proj_contract',
             'proj_value',

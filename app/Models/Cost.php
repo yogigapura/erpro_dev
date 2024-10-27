@@ -17,10 +17,11 @@ class Cost extends Model
             'id_cost',
             'id_proj',
             'id_budget',
+            'id_group',
             'cost_name',
             'cost_value',
-            'cost_description',
-            'cost_document'
+            'cost_description'
+            // 'cost_document'
         ];
 
         

@@ -36,6 +36,19 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Project Group Admin :</strong>
+                <select class="form-select" name="id_group" id="id_group" required>
+                    <option value="" disabled selected>...</option>
+                    @foreach ($groups as $group)
+                        <option value="{{$group->id_group}}">{{$group->group_name}}</option>
+                    @endforeach
+                </select>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <strong>Select a customer : </strong>
         <select class="form-select" name="id_cust" id="id_cust" required>
             <option value="" disabled selected>...</option>

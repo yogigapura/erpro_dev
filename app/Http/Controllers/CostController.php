@@ -63,9 +63,12 @@ class CostController extends Controller
         //     'email' => 'johndoe@example.com',
         //     'password' => bcrypt('password'),
         // ]);
+        $id_proj = session('id_proj');
+        $id_group = session('id_group');
 
         Cost::create([
-            'id_proj' => $request->id_proj,
+            'id_proj' => $id_proj,
+            'id_group' => $id_group,
             'id_budget' => $request->id_budget,
             'cost_name' => $request->cost_name,
             'cost_value' => $request->cost_value,
