@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('budgets', function (Blueprint $table) {
             $table->id('id_budget');
             $table->string('id_proj');
-            $table->string('id_group');
             $table->string('budget_name');
             $table->bigInteger('budget_value');
             $table->string('budget_description');

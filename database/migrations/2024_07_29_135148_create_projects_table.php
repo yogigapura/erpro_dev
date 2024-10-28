@@ -19,7 +19,6 @@ return new class extends Migration
             $table->bigInteger('proj_value');
             $table->date('proj_due_date');
             $table->string('proj_detail');
-            $table->string('id_group');
             $table->timestamps();
             $table->softDeletes();
         });

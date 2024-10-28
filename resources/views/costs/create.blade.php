@@ -11,7 +11,7 @@
     </div>
     <div class="pull-right">
         <?php
-            $id_proj = session('proj_id');
+            $id_proj = session('id_proj');
         ?>
         <a class="btn btn-secondary" href="{{ route('projects.show',$id_proj) }}">Back</a>
     </div>

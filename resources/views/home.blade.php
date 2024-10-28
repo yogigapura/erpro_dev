@@ -13,12 +13,12 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Group
                         </button>
-                        <ul class="dropdown-menu">
+                        {{-- <ul class="dropdown-menu">
                             @foreach ($groups as $group)
                                 <a class="dropdown-item" href="/group">{{ $group->group_name}}</a>
 
                             @endforeach
-                        </ul>
+                        </ul> --}}
                       </div>
                     {{-- @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -26,7 +26,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }} --}}
+                    {{ __('You are logged in!') }} 
+                     --}}
                 </div>
             </div>
         </div>

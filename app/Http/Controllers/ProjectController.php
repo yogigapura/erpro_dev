@@ -81,13 +81,13 @@ class ProjectController extends Controller
         //
         $user = Auth::user()->id;
 
-        $groups = DB::table('group_members')
-            ->join('groups', 'group_members.id_group', '=', 'groups.id_group')
-            ->where('id_user','=',$user)
-            ->get();
+        // $groups = DB::table('group_members')
+        //     ->join('groups', 'group_members.id_group', '=', 'groups.id_group')
+        //     ->where('id_user','=',$user)
+        //     ->get();
 
         $customers = Customer::all();
-        return view('projects.create',compact('customers','groups'));
+        return view('projects.create',compact('customers'));
     }
 
     /**
@@ -101,7 +101,6 @@ class ProjectController extends Controller
             //$request->all()
 [
                 'id_cust' => $user,
-                'id_group' => $request->id_group,
                 'proj_name' => $request->proj_name,
                 'proj_contract' => $request->proj_contract,
                 'proj_value' => $request->proj_value,
@@ -128,7 +127,6 @@ class ProjectController extends Controller
         // cara nyimpen session
         session(['id_proj' => $project->id_proj]);
         session(['proj_name' => $project->proj_name]);
-        session(['id_group' => $project->id_group]);
 
         return view('projects.detail', compact('project','budgets','costs'));
     }
@@ -149,14 +147,14 @@ class ProjectController extends Controller
 
         $user = Auth::user()->id;
 
-        $groups = DB::table('group_members')
-            ->join('groups', 'group_members.id_group', '=', 'groups.id_group')
-            ->where('id_user','=',$user)
-            ->get();
+        // $groups = DB::table('group_members')
+        //     ->join('groups', 'group_members.id_group', '=', 'groups.id_group')
+        //     ->where('id_user','=',$user)
+        //     ->get();
 
         $project = Project::findOrFail($id);
         $customers = Customer::all();
-        return view('projects.edit',compact('project','customers','groups'));
+        return view('projects.edit',compact('project','customers'));
     }
 
     /**

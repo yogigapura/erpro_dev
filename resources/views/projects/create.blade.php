@@ -36,19 +36,6 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Project Group Admin :</strong>
-                <select class="form-select" name="id_group" id="id_group" required>
-                    <option value="" disabled selected>...</option>
-                    @foreach ($groups as $group)
-                        <option value="{{$group->id_group}}">{{$group->group_name}}</option>
-                    @endforeach
-                </select>
-
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
             <strong>Select a customer : </strong>
         <select class="form-select" name="id_cust" id="id_cust" required>
             <option value="" disabled selected>...</option>
@@ -59,31 +46,34 @@
         </div>
 
 
-
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Contract Number  :</strong>
                 <input class="form-control" name="proj_contract" placeholder="No SPK / SPR / Contract"></input>
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Project Value :</strong>
                 <input type="text" name="proj_value" class="form-control" placeholder="Contract Value">
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Project Due Date :</strong>
                 <input type="date" name="proj_due_date" class="form-control" placeholder="Due Date">
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Project Detail :</strong>
                 <input class="form-control" style="height:150px" name="proj_detail" placeholder="Detail about the project"></input>
             </div>
         </div>
+        
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
